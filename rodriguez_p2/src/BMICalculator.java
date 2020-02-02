@@ -145,10 +145,10 @@ public class BMICalculator
 		return BmiCategory;
 	}
 
-	public static void main (String [] args)
-	{
-		readUserData();
-		calculateBmi();
-		displayBmi();
-	}
+	// public static void main (String [] args)
+	// {
+	//	readUserData();
+	//	calculateBmi();
+	//	displayBmi();
+	// }
 }
