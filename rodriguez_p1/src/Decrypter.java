@@ -2,7 +2,6 @@
 // COP 3330
 // Programming Assignment 2
 
-import java.util.Scanner;
 public class Decrypter
 {
 	public int decrypt (int number)
