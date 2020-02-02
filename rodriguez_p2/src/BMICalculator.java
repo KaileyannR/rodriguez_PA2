@@ -5,13 +5,14 @@
 import java.util.Scanner;
 public class BMICalculator
 {
-	//return and calculations will be in imperial units
+	// Returns and calculations will be in imperial units.
 	public static  double weight = 0;
 	public static double height = 0;
 	public static double BMI = 0;
 	public static String BmiCategory;
 
-
+	// Provides user data about which BMI calculator they would like to use.
+	// Calls method readUnitType() to scan which BMI calculator.
 	public static void readUserData()
 	{
 		System.out.println("A) Metric Units");
@@ -21,6 +22,7 @@ public class BMICalculator
 		readMeasurementData(unitType);
 	}
 
+	// Scans for users BMI calculator choice.
 	private static String readUnitType()
 	{
 		Scanner BMIChoice = new Scanner(System.in);
@@ -28,6 +30,8 @@ public class BMICalculator
 		return choice;
 	}
 
+	// Based on users BMI choice, method calls either readMetricData or
+	// calls readImperialData.
 	private static void readMeasurementData(String unitType)
 	{
 		if(unitType.equals("A"))
@@ -40,6 +44,7 @@ public class BMICalculator
 		}
 	}
 
+	// Scans users input of metric weight and height then converts data to standard.
 	private static void readMetricData()
 	{
 		double iWeight = 0;
@@ -58,6 +63,7 @@ public class BMICalculator
 		setHeight(iHeight);
 	}
 
+	// Scans users input of imperial weight and height.
 	private static void readImperialData()
 	{
 		Scanner imperialInfo = new Scanner(System.in);
@@ -71,11 +77,13 @@ public class BMICalculator
 		setHeight(imperialHeight);
 	}
 
+	// Completes calculations of weight and height (in imperial) to get users BMI.
 	public static void calculateBmi()
 	{
 		BMI = ((703 * weight) / (height * height));
 	}
 
+	// Uses users BMI to calculate BMI category.
 	private static void calculateBmiCategory()
 	{
 		if(BMI < 18.5)
@@ -100,6 +108,7 @@ public class BMICalculator
 		}
 	}
 
+	// Prints BMI and BMI categry.
 	public static void displayBmi()
 	{
 		calculateBmi();
@@ -145,10 +154,11 @@ public class BMICalculator
 		return BmiCategory;
 	}
 
+	// Used to test code.
 	// public static void main (String [] args)
 	// {
-	//	readUserData();
-	//	calculateBmi();
-	//	displayBmi();
+	// 	readUserData();
+	// 	calculateBmi();
+	// 	displayBmi();
 	// }
 }
